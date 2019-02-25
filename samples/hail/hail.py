@@ -64,10 +64,16 @@ class HailConfig(Config):
     NUM_CLASSES = 1 + 1  # Background + hail
 
     # Number of training steps per epoch
-    STEPS_PER_EPOCH = 100
+    STEPS_PER_EPOCH = 150
 
     # Skip detections with < 90% confidence
-    DETECTION_MIN_CONFIDENCE = 0.9
+    DETECTION_MIN_CONFIDENCE = 0.5
+    
+    # Max number of final detections
+    DETECTION_MAX_INSTANCES = 200
+    
+    # Maximum number of ground truth instances to use in one image
+    MAX_GT_INSTANCES = 100
 
 
 ############################################################
