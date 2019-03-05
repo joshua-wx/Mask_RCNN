@@ -57,8 +57,8 @@ class HailConfig(Config):
     NAME = "hail"
 
     # We use a GPU with 12GB memory, which can fit two images.
-    # Adjust down if you use a smaller GPU. (adjusted for 24GB on NCI)
-    IMAGES_PER_GPU = 1
+    # Adjust down if you use a smaller GPU.
+    IMAGES_PER_GPU = 2
 
     # Number of classes (including background)
     NUM_CLASSES = 1 + 1  # Background + hail
@@ -70,10 +70,13 @@ class HailConfig(Config):
     DETECTION_MIN_CONFIDENCE = 0.5
     
     # Max number of final detections
-    DETECTION_MAX_INSTANCES = 200
+    DETECTION_MAX_INSTANCES = 150
     
     # Maximum number of ground truth instances to use in one image
     MAX_GT_INSTANCES = 100
+    
+    #number of EPOCHS
+    NUMBER_OF_EPOCHS = 35
 
 
 ############################################################
@@ -222,7 +225,7 @@ def train(model):
     print("Training network heads")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=30,
+                epochs=config.NUMBER_OF_EPOCHS,
                 layers='heads')
 
 
