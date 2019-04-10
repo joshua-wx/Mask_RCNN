@@ -27,7 +27,8 @@ def _parse_requirements(file_path):
 # parse_requirements() returns generator of pip.req.InstallRequirement objects
 try:
     install_reqs = _parse_requirements("requirements.txt")
-except Exception:
+except Exception as e:
+    print(e)
     logging.warning('Fail load requirements file, so using default ones.')
     install_reqs = []
 

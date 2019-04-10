@@ -1,2 +1,0 @@
-Epoch 21/30
-200/200 [==============================] - 824s 4s/step - loss: 0.1936 - rpn_class_loss: 0.0027 - rpn_bbox_loss: 0.0053 - mrcnn_class_loss: 0.0953 - mrcnn_bbox_loss: 0.0079 - mrcnn_mask_loss: 0.0825 - val_loss: 1.4921 - val_rpn_class_loss: 0.1322 - val_rpn_bbox_loss: 0.1498 - val_mrcnn_class_loss: 0.5663 - val_mrcnn_bbox_loss: 0.1736 - val_mrcnn_mask_loss: 0.4702
